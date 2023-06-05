@@ -3,6 +3,7 @@
   "extends": [
     "config:base"
   ],
+  "enabledManagers": ["dockerfile"],
   "regexManagers": [
     {
       "fileMatch": [
@@ -12,7 +13,11 @@
         "image: (?<depName>\\S*):(?<currentValue>\\S*)"
       ],
       "datasourceTemplate": "docker",
-      "depNameTemplate": "<registry>/<org>/{{{depName}}}"
+      "depNameTemplate": "registry.access.redhat.com/ubi9/{{{depName}}}:"
     }
+  ],
+  "ignorePaths": [
+    "**/docker/**",
+    ".ci/**"
   ]
 }
