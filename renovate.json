@@ -9,9 +9,10 @@
         "devfile.*y[a]?ml$"
       ],
       "matchStrings": [
-        "image: <depName>:<currentValue>"
+        "image: (?<depName>\\S*):(?<currentValue>\\S*)"
       ],
-      "datasourceTemplate": "docker"
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "<registry>/<org>/{{{depName}}}"
     }
   ]
 }
