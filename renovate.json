@@ -12,7 +12,7 @@
         "image: (?<depName>\\S*):(?<currentValue>\\S*)"
       ],
       "datasourceTemplate": "docker",
-      "depNameTemplate": "{{depName}}}"
+      "depNameTemplate": "{{{depName}}}"
     }
   ],
   "ignorePaths": [
