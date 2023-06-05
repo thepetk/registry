@@ -3,7 +3,8 @@ module github.com/devfile/registry/tests/validate_devfiles
 go 1.18
 
 require (
-	github.com/devfile/library v1.3.0
+	github.com/devfile/library v1.2.1-0.20220308191614-f0f7e11b17de
+	github.com/devfile/library/v2 v2.2.0
 	github.com/onsi/ginkgo/v2 v2.5.0
 	github.com/onsi/gomega v1.24.0
 )
