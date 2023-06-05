@@ -119,6 +119,8 @@ github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/devfile/api/v2 v2.0.0-20220309195345-48ebbf1e51cf h1:FkwAOQtepscB5B0j++9S/eoicXj707MaP5HPIScz0sA=
 github.com/devfile/api/v2 v2.0.0-20220309195345-48ebbf1e51cf/go.mod h1:kLX/nW93gigOHXK3NLeJL2fSS/sgEe+OHu8bo3aoOi4=
+github.com/devfile/api/v2 v2.2.0 h1:3Mwl/dtT508oU4pNt/v4G8vqvjoZqi9LOInXCNwKMoc=
+github.com/devfile/api/v2 v2.2.0/go.mod h1:dN7xFrOVG+iPqn4UKGibXLd5oVsdE8XyK9OEb5JL3aI=
 github.com/devfile/library v1.2.1-0.20220602130922-85a4805bd59c h1:Puqg/NJ6pP1LPFxPYBX9c0Oh0Ttu5PVdNJL5WR/CRTk=
 github.com/devfile/library v1.2.1-0.20220602130922-85a4805bd59c/go.mod h1:kpkIA9YI7gkfglRDsKJ3n5QgVyyBmnasr2U2djYwg6s=
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=

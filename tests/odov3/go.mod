@@ -3,7 +3,7 @@ module github.com/devfile/registry/tests/odov3
 go 1.18
 
 require (
-	github.com/devfile/api/v2 v2.0.0-20220309195345-48ebbf1e51cf
+	github.com/devfile/api/v2 v2.2.0
 	github.com/devfile/library v1.2.1-0.20220602130922-85a4805bd59c
 	github.com/onsi/ginkgo/v2 v2.5.0
 	github.com/onsi/gomega v1.24.0
