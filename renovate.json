@@ -12,7 +12,7 @@
         "image: (?<depName>\\S*):(?<currentValue>\\S*)"
       ],
       "datasourceTemplate": "docker",
-      "depNameTemplate": "registry.access.redhat.com/ubi9/{{{depName}}}:"
+      "depNameTemplate": "{{depName}}}"
     }
   ],
   "ignorePaths": [
