@@ -18,5 +18,7 @@
   "ignorePaths": [
     "**/docker/**",
     ".ci/**"
-  ]
+  ],
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0
 }
