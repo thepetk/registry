@@ -14,14 +14,6 @@
       ],
       "datasourceTemplate": "docker",
       "depNameTemplate": "{{{depName}}}"
-    },
-    {
-      "fileMatch": [
-        "^(workflow-templates|\\.github/workflows)/[^/]+\\.ya?ml$",
-        "(^|/)action\\.ya?ml$"
-      ],
-      "datasourceTemplate": "github-tags",
-      "depNameTemplate": "{{{depName}}}"
     }
   ],
   "ignorePaths": [
