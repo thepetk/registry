@@ -20,6 +20,8 @@
   "packageRules": [
       {
         "matchManagers": ["github-actions"],
+        "groupName": "github actions",
+        "groupSlug": "github-actions",
         "commitMessageTopic": "{{depName}}"
       }
   ],
