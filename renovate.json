@@ -4,6 +4,7 @@
     "config:base",
     "helpers:pinGitHubActionDigests"
   ],
+  "enabledManagers": ["regex", "github-actions"],
   "regexManagers": [
     {
       "fileMatch": [
@@ -15,6 +16,12 @@
       "datasourceTemplate": "docker",
       "depNameTemplate": "{{{depName}}}"
     }
+  ],
+  "packageRules": [
+      {
+        "matchManagers": ["github-actions"],
+        "commitMessageTopic": "Update {{depName}}"
+      }
   ],
   "ignorePaths": [
     "**/docker/**",
