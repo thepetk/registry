@@ -20,7 +20,7 @@
   "packageRules": [
       {
         "matchManagers": ["github-actions"],
-        "commitMessageTopic": "Update {{depName}}"
+        "commitMessageTopic": "{{depName}}"
       }
   ],
   "ignorePaths": [
