@@ -62,7 +62,7 @@ jobs:
       - name: Save Comment ID
         if: ${{ steps.find.outputs.comment-id != '' }}
         run: echo ${{ steps.find.outputs.comment-id }} > ./pr/commentid
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3
         with:
           name: pr
           path: pr/
