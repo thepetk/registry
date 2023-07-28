@@ -24,6 +24,11 @@
         "groupName": "github actions",
         "groupSlug": "github-actions",
         "commitMessageTopic": "{{depName}}"
+      },
+      {
+        "matchManagers": ["regex"],
+        "matchPackageNames": "{{depName}}",
+        "commitMessageTopic": "{{depName}}"
       }
   ],
   "ignorePaths": [
@@ -31,6 +36,6 @@
     ".ci/**",
     "tests/**"
   ],
-  "prHourlyLimit": 0,
+  "prHourlyLimit": 10,
   "prConcurrentLimit": 0
 }
