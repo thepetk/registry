@@ -4,9 +4,13 @@
     "github>platform-engineering-org/.github",
     ":gitSignOff"
   ],
-  "enabledManagers": ["regex", "github-actions"],
-  "regexManagers": [
+  "enabledManagers": [
+    "regex",
+    "github-actions"
+  ],
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": [
         "devfile.*y[a]?ml$"
       ],
@@ -18,12 +22,14 @@
     }
   ],
   "packageRules": [
-      {
-        "matchManagers": ["github-actions"],
-        "groupName": "github actions",
-        "groupSlug": "github-actions",
-        "commitMessageTopic": "{{depName}}"
-      }
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "groupName": "github actions",
+      "groupSlug": "github-actions",
+      "commitMessageTopic": "{{depName}}"
+    }
   ],
   "ignorePaths": [
     "**/docker/**",
