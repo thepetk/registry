@@ -4,6 +4,9 @@
     "github>platform-engineering-org/.github",
     ":gitSignOff"
   ],
+  "schedule": [
+    "at any time"
+  ],
   "enabledManagers": ["regex", "github-actions"],
   "regexManagers": [
     {
