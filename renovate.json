@@ -26,6 +26,11 @@
         "groupName": "github actions",
         "groupSlug": "github-actions",
         "commitMessageTopic": "{{depName}}"
+      },
+      {
+        "description": "Disable grouping patch and digest updates",
+        "matchUpdateTypes": ["patch", "digest"],
+        "groupName": null
       }
   ],
   "ignorePaths": [
