@@ -8,6 +8,7 @@ metadata:
     - Node.js
     - Express
     - ubi8
+    - Deprecated
   projectType: Node.js
   language: JavaScript
   version: 2.2.0
@@ -15,12 +16,15 @@ starterProjects:
   - name: nodejs-starter
     git:
       remotes:
-        origin: 'https://github.com/odo-devfiles/nodejs-ex.git'
+        origin: https://github.com/odo-devfiles/nodejs-ex.git
 components:
   - name: runtime
     container:
       image: registry.access.redhat.com/ubi8/nodejs-18:1-32
-      args: ['tail', '-f', '/dev/null']
+      args:
+        - tail
+        - -f
+        - /dev/null
       memoryLimit: 1024Mi
       mountSources: true
       env:
