@@ -2,15 +2,16 @@ schemaVersion: 2.1.0
 metadata:
   name: php-laravel
   displayName: Laravel
-  description: "Laravel is an open-source PHP framework, which is robust and easy to understand.
-    It follows a model-view-controller design pattern.
-    Laravel reuses the existing components of different frameworks which helps in creating a web application.
-    The web application thus designed is more structured and pragmatic."
+  description: Laravel is an open-source PHP framework, which is robust and easy to
+    understand. It follows a model-view-controller design pattern. Laravel reuses
+    the existing components of different frameworks which helps in creating a web
+    application. The web application thus designed is more structured and pragmatic.
   icon: https://raw.githubusercontent.com/devfile-samples/devfile-stack-icons/main/laravel.svg
   tags:
     - PHP
     - Composer
     - Laravel
+    - Deprecated
   projectType: Laravel
   language: PHP
   provider: Red Hat
@@ -28,7 +29,10 @@ components:
         - name: http-laravel
           targetPort: 8000
       image: quay.io/devfile/composer:2.5.8
-      args: ["tail", "-f", "/dev/null"]
+      args:
+        - tail
+        - -f
+        - /dev/null
       memoryLimit: 1024Mi
       mountSources: true
     name: runtime
