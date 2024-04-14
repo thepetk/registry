@@ -24,6 +24,7 @@ metadata:
   tags:
     - Java
     - Maven
+    - Deprecated
   architectures:
     - amd64
     - ppc64le
@@ -40,15 +41,15 @@ starterProjects:
         origin: https://github.com/OpenLiberty/devfile-stack-starters.git
 variables:
   # Liberty runtime version. Minimum recommended: 21.0.0.9
-  liberty-version: '22.0.0.1'
-  liberty-plugin-version: '3.5.1'
-  mvn-cmd: 'mvn'
+  liberty-version: 22.0.0.1
+  liberty-plugin-version: 3.5.1
+  mvn-cmd: mvn
 components:
   - name: dev
     container:
       # In the original upstream of this devfile, the image used is openliberty/devfile-stack:<x.y.z>, which is built from the repository: https://github.com/OpenLiberty/devfile-stack
       image: icr.io/appcafe/open-liberty-devfile-stack:{{liberty-version}}
-      args: ['tail', '-f', '/dev/null']
+      args: [tail, -f, /dev/null]
       memoryLimit: 768Mi
       mountSources: true
       endpoints:
