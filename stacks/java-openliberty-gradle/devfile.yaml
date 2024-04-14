@@ -24,6 +24,7 @@ metadata:
   tags:
     - Java
     - Gradle
+    - Deprecated
   architectures:
     - amd64
     - ppc64le
@@ -37,16 +38,16 @@ starterProjects:
   - name: rest
     git:
       remotes:
-        origin: 'https://github.com/OpenLiberty/devfile-stack-starters.git'
+        origin: https://github.com/OpenLiberty/devfile-stack-starters.git
 variables:
   # Liberty runtime version. Minimum recommended: 21.0.0.9
-  liberty-version: '22.0.0.1'
-  gradle-cmd: 'gradle'
+  liberty-version: 22.0.0.1
+  gradle-cmd: gradle
 components:
   - name: dev
     container:
       image: icr.io/appcafe/open-liberty-devfile-stack:{{liberty-version}}-gradle
-      args: ['tail', '-f', '/dev/null']
+      args: [tail, -f, /dev/null]
       memoryLimit: 1280Mi
       mountSources: true
       endpoints:
