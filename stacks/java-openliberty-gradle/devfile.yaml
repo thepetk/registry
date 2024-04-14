@@ -17,84 +17,85 @@
 
 schemaVersion: 2.1.0
 metadata:
-  name: java-openliberty-gradle
-  displayName: Open Liberty Gradle
-  description: Java application based on Java 11, Gradle using the Open Liberty runtime 22.0.0.1
-  icon: https://raw.githubusercontent.com/OpenLiberty/logos/7fbb132949b9b2589e18c8d5665c1b107028a21d/logomark/svg/OL_logomark.svg
-  tags:
-    - Java
-    - Gradle
-  architectures:
-    - amd64
-    - ppc64le
-    - s390x
-  projectType: Open Liberty
-  language: Java
-  version: 0.4.0
-  alpha.build-dockerfile: https://github.com/OpenLiberty/devfile-stack/releases/download/open-liberty-gradle-0.3.1/Dockerfile
-  alpha.deployment-manifest: https://github.com/OpenLiberty/devfile-stack/releases/download/open-liberty-gradle-0.3.1/app-deploy.yaml
+    name: java-openliberty-gradle
+    displayName: Open Liberty Gradle
+    description: Java application based on Java 11, Gradle using the Open Liberty runtime 22.0.0.1
+    icon: https://raw.githubusercontent.com/OpenLiberty/logos/7fbb132949b9b2589e18c8d5665c1b107028a21d/logomark/svg/OL_logomark.svg
+    tags:
+    -   Java
+    -   Gradle
+    -   Deprecated
+    architectures:
+    -   amd64
+    -   ppc64le
+    -   s390x
+    projectType: Open Liberty
+    language: Java
+    version: 0.4.0
+    alpha.build-dockerfile: https://github.com/OpenLiberty/devfile-stack/releases/download/open-liberty-gradle-0.3.1/Dockerfile
+    alpha.deployment-manifest: https://github.com/OpenLiberty/devfile-stack/releases/download/open-liberty-gradle-0.3.1/app-deploy.yaml
 starterProjects:
-  - name: rest
+-   name: rest
     git:
-      remotes:
-        origin: 'https://github.com/OpenLiberty/devfile-stack-starters.git'
+        remotes:
+            origin: https://github.com/OpenLiberty/devfile-stack-starters.git
 variables:
   # Liberty runtime version. Minimum recommended: 21.0.0.9
-  liberty-version: '22.0.0.1'
-  gradle-cmd: 'gradle'
+    liberty-version: 22.0.0.1
+    gradle-cmd: gradle
 components:
-  - name: dev
+-   name: dev
     container:
-      image: icr.io/appcafe/open-liberty-devfile-stack:{{liberty-version}}-gradle
-      args: ['tail', '-f', '/dev/null']
-      memoryLimit: 1280Mi
-      mountSources: true
-      endpoints:
-        - exposure: public
-          path: /
-          name: http-gradle
-          targetPort: 9080
-          protocol: http
-        - exposure: none
-          name: debug
-          targetPort: 5858
-      env:
-        - name: DEBUG_PORT
-          value: '5858'
+        image: icr.io/appcafe/open-liberty-devfile-stack:{{liberty-version}}-gradle
+        args: [tail, -f, /dev/null]
+        memoryLimit: 1280Mi
+        mountSources: true
+        endpoints:
+        -   exposure: public
+            path: /
+            name: http-gradle
+            targetPort: 9080
+            protocol: http
+        -   exposure: none
+            name: debug
+            targetPort: 5858
+        env:
+        -   name: DEBUG_PORT
+            value: '5858'
 commands:
-  - id: run
+-   id: run
     exec:
-      component: dev
-      commandLine: echo "gradle run command"; {{gradle-cmd}} -Dgradle.user.home=/.gradle libertyDev -Pliberty.runtime.version={{liberty-version}} -Pliberty.runtime.name=openliberty-runtime -Pliberty.runtime.group=io.openliberty --libertyDebug=false --hotTests --compileWait=3
-      workingDir: ${PROJECT_SOURCE}
-      hotReloadCapable: true
-      group:
-        kind: run
-        isDefault: true
-  - id: run-test-off
+        component: dev
+        commandLine: echo "gradle run command"; {{gradle-cmd}} -Dgradle.user.home=/.gradle libertyDev -Pliberty.runtime.version={{liberty-version}} -Pliberty.runtime.name=openliberty-runtime -Pliberty.runtime.group=io.openliberty --libertyDebug=false --hotTests --compileWait=3
+        workingDir: ${PROJECT_SOURCE}
+        hotReloadCapable: true
+        group:
+            kind: run
+            isDefault: true
+-   id: run-test-off
     exec:
-      component: dev
-      commandLine: echo "gradle run-tests-off command "; {{gradle-cmd}} -Dgradle.user.home=/.gradle libertyDev -Pliberty.runtime.version={{liberty-version}} -Pliberty.runtime.name=openliberty-runtime -Pliberty.runtime.group=io.openliberty --libertyDebug=false
-      workingDir: ${PROJECT_SOURCE}
-      hotReloadCapable: true
-      group:
-        kind: run
-        isDefault: false
-  - id: debug
+        component: dev
+        commandLine: echo "gradle run-tests-off command "; {{gradle-cmd}} -Dgradle.user.home=/.gradle libertyDev -Pliberty.runtime.version={{liberty-version}} -Pliberty.runtime.name=openliberty-runtime -Pliberty.runtime.group=io.openliberty --libertyDebug=false
+        workingDir: ${PROJECT_SOURCE}
+        hotReloadCapable: true
+        group:
+            kind: run
+            isDefault: false
+-   id: debug
     exec:
-      component: dev
-      commandLine: echo "gradle debug command "; {{gradle-cmd}} -Dgradle.user.home=/.gradle libertyDev -Pliberty.runtime.version={{liberty-version}} -Pliberty.runtime.name=openliberty-runtime -Pliberty.runtime.group=io.openliberty --libertyDebugPort=${DEBUG_PORT} -Pliberty.server.env.WLP_DEBUG_REMOTE=y
-      workingDir: ${PROJECT_SOURCE}
-      hotReloadCapable: true
-      group:
-        kind: debug
-        isDefault: true
-  - id: test
+        component: dev
+        commandLine: echo "gradle debug command "; {{gradle-cmd}} -Dgradle.user.home=/.gradle libertyDev -Pliberty.runtime.version={{liberty-version}} -Pliberty.runtime.name=openliberty-runtime -Pliberty.runtime.group=io.openliberty --libertyDebugPort=${DEBUG_PORT} -Pliberty.server.env.WLP_DEBUG_REMOTE=y
+        workingDir: ${PROJECT_SOURCE}
+        hotReloadCapable: true
+        group:
+            kind: debug
+            isDefault: true
+-   id: test
     exec:
-      component: dev
-      commandLine: echo "gradle test command "; {{gradle-cmd}} -Dgradle.user.home=/.gradle test -Pliberty.runtime.version={{liberty-version}} -Pliberty.runtime.name=openliberty-runtime -Pliberty.runtime.group=io.openliberty
-      workingDir: ${PROJECT_SOURCE}
-      hotReloadCapable: true
-      group:
-        kind: test
-        isDefault: true
+        component: dev
+        commandLine: echo "gradle test command "; {{gradle-cmd}} -Dgradle.user.home=/.gradle test -Pliberty.runtime.version={{liberty-version}} -Pliberty.runtime.name=openliberty-runtime -Pliberty.runtime.group=io.openliberty
+        workingDir: ${PROJECT_SOURCE}
+        hotReloadCapable: true
+        group:
+            kind: test
+            isDefault: true
