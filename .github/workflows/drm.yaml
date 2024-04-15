@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Deprecate or Remove expired stacks
         id: deprecate-remove
-        uses: thepetk/devfile-registry-maintainer@7ef717147249aa7a85be9f71a260a85006645baa #v0.1.0
+        uses: thepetk/devfile-registry-maintainer@77c6a20a419518a74b81fa15d86a81f6d07f0442 #v0.1.0
         with:
           pr_creation_limit: "2"
           deprecation_days_limit: "200"
