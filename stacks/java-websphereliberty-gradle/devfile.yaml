@@ -25,6 +25,7 @@ metadata:
     - Java
     - Gradle
     - WebSphere Liberty
+    - Deprecated
   architectures:
     - amd64
     - ppc64le
