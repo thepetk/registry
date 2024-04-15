@@ -2,7 +2,7 @@ name: Devfile Registry Maintainer
 
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/30 * * * *"
 
 jobs:
   devfile-registry-maintainer:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Deprecate or Remove expired stacks
         id: deprecate-remove
-        uses: thepetk/devfile-registry-maintainer@163cdc11e5179e7b19f4e28d6f0be26dc792f91f #v0.1.0
+        uses: thepetk/devfile-registry-maintainer@a4014b57af32c64c50a235da5a3f1c2c2c18fb42 #v0.1.0
         with:
           registry_repo_token: ${{ secrets.REGISTRY_REPO_TOKEN }}
           pr_creation_limit: "2"
