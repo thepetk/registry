@@ -1,3 +1,5 @@
+name: Devfile Registry Maintainer
+
 on:
   schedule:
     - cron: "*/30 * * * *"
