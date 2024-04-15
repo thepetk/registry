@@ -24,6 +24,7 @@ metadata:
   tags:
     - Java
     - Maven
+    - Deprecated
   architectures:
     - amd64
     - ppc64le
