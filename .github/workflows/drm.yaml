@@ -13,6 +13,7 @@ jobs:
         id: deprecate-remove
         uses: thepetk/devfile-registry-maintainer@163cdc11e5179e7b19f4e28d6f0be26dc792f91f #v0.1.0
         with:
+          registry_repo_token: $secrets.GITHUB_TOKEN
           pr_creation_limit: "2"
           deprecation_days_limit: "200"
           removal_days_limit: "200"
