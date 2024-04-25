@@ -73,11 +73,11 @@ commands:
       component: py
       group:
         kind: debug
-  - id: build-image
-    apply:
+  - apply:
+      id: build-image
       component: build
-  - id: deployk8s
-    apply:
+  - apply:
+      id: deployk8s
       component: deploy
   - id: deploy
     composite:
