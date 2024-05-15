@@ -18,9 +18,9 @@ starterProjects:
   - name: nodejs-angular-starter
     git:
       checkoutFrom:
-        revision: main
+        revision: disable-host-check
       remotes:
-        origin: https://github.com/devfile-samples/devfile-stack-nodejs-angular.git
+        origin: https://github.com/vitaliy-guliy/devfile-stack-nodejs-angular.git
 components:
   - container:
       endpoints:
