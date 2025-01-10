@@ -3,8 +3,8 @@ metadata:
   name: openwrt-helloworld
 attributes:
   controller.devfile.io/storage-type: ephemeral
-parent:
-  uri: https://github.com/thepetk/registry/blob/2e832cc98a931b1015079cb62b6332fe126076ee/stacks/test/devfile.yaml
+# parent:
+#   uri: https://github.com/thepetk/registry/blob/2e832cc98a931b1015079cb62b6332fe126076ee/stacks/test/devfile.yaml
 projects:
   - name: openwrt-helloworld
     git:
@@ -106,3 +106,34 @@ commands:
       commandLine: npx http-server -a 0.0.0.0 -p 8080 -o bin/targets
       group:
         kind: build
+components:
+  - name: runtime
+    container:
+      image: docker.io/olexii4dockerid/openwrt-builder:next
+      memoryLimit: 6656Mi
+      memoryRequest: 512Mi
+      cpuLimit: 10000m
+      cpuRequest: 1000m
+      mountSources: true
+      endpoints:
+        - exposure: public
+          name: file-server
+          protocol: https
+          targetPort: 8080
+          path: /bin/targets
+  - name: qemu
+    container:
+      image: quay.io/che-incubator/openwrt-runner:latest
+      memoryLimit: 1536Mi
+      memoryRequest: 256Mi
+      cpuLimit: 1500m
+      cpuRequest: 500m
+      mountSources: true
+      env:
+        - name: KUBEDOCK_ENABLED
+          value: "true"
+      endpoints:
+        - exposure: public
+          name: luci
+          protocol: https
+          targetPort: 30080
