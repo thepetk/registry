@@ -4,7 +4,7 @@ metadata:
 parent:
   uri: https://raw.githubusercontent.com/thepetk/registry/63fe2705d4a156406940f232f0068cff7016b504/stacks/test/devfile.yaml
   attributes:
-    controller.devfile.io/storage-type: ephemeral
+    controller.devfile.io/storage-type: per-workspace
 projects:
   - name: openwrt-helloworld
     git:
