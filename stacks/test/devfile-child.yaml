@@ -2,7 +2,7 @@ schemaVersion: 2.3.0
 metadata:
   name: openwrt-helloworld
 parent:
-  uri: https://raw.githubusercontent.com/thepetk/registry/63fe2705d4a156406940f232f0068cff7016b504/stacks/test/devfile.yaml
+  uri: https://raw.githubusercontent.com/thepetk/registry/638ddfa2bac40da85f640bd3a1e37d1b623cc166/stacks/test/devfile.yaml
   attributes:
     controller.devfile.io/storage-type: per-workspace
 projects:
