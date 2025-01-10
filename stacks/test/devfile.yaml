@@ -1,0 +1,34 @@
+schemaVersion: 2.2.2
+metadata:
+  generateName: openwrt-helloworld
+components:
+  - name: runtime
+    container:
+      image: docker.io/olexii4dockerid/openwrt-builder:next
+      memoryLimit: 6656Mi
+      memoryRequest: 512Mi
+      cpuLimit: 10000m
+      cpuRequest: 1000m
+      mountSources: true
+      endpoints:
+        - exposure: public
+          name: file-server
+          protocol: https
+          targetPort: 8080
+          path: /bin/targets
+  - name: qemu
+    container:
+      image: quay.io/che-incubator/openwrt-runner:latest
+      memoryLimit: 1536Mi
+      memoryRequest: 256Mi
+      cpuLimit: 1500m
+      cpuRequest: 500m
+      mountSources: true
+      env:
+        - name: KUBEDOCK_ENABLED
+          value: "true"
+      endpoints:
+        - exposure: public
+          name: luci
+          protocol: https
+          targetPort: 30080
