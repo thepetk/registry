@@ -1,6 +1,6 @@
 schemaVersion: 2.2.2
 metadata:
-  generateName: openwrt-helloworld
+  name: openwrt-helloworld
 components:
   - name: runtime
     container:
