@@ -1,8 +1,8 @@
 schemaVersion: 2.3.0
 metadata:
   name: openwrt-helloworld
-# attributes:
-#   controller.devfile.io/storage-type: ephemeral
+attributes:
+  controller.devfile.io/storage-type: ephemeral
 parent:
   uri: https://raw.githubusercontent.com/thepetk/registry/2e832cc98a931b1015079cb62b6332fe126076ee/stacks/test/devfile.yaml
 projects:
