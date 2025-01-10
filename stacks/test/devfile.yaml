@@ -1,6 +1,8 @@
 schemaVersion: 2.2.2
 metadata:
   name: openwrt-helloworld
+attributes:
+  controller.devfile.io/storage-type: ephemeral
 components:
   - name: runtime
     container:
